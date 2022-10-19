@@ -18,7 +18,7 @@ class TaxCalculator1{
     public double calculateTax(String empName, boolean isIndian, double empSal) {    //tax calculating method
         double taxAmount = 0;
         try {
-            if (isIndian != true) {
+            if (isIndian == false) {
                 throw new CountryNotValidException("The employee should be an Indian citizen for calculating tax");        //custom exception
             }
             if (empName == null) {                //if employee name is not passed
