@@ -24,13 +24,13 @@ class TaxCalculator1{
             if (empName == null) {                //if employee name is not passed
                 throw new EmployeeNameInValidException("The employee name cant be empty");                                //custom exception
             }
-            if (empSal > 100000 && isIndian == true) {                            // Salary greater than 10k and emp. is indian
+            if (empSal > 100000 && isIndian == true) {                            // Salary greater than 10k
                 return taxAmount = empSal * 8 / 100;
-            } else if ((empSal > 50000 && empSal < 100000) && isIndian == true) {    // Salary between than 50k to 1Lakh and emp. is indian
+            } else if ((empSal > 50000 && empSal < 100000) && isIndian == true) {    // Salary between than 50k to 1Lakh
                 return taxAmount = empSal * 6 / 100;
-            } else if ((empSal > 30000 && empSal < 50000) && isIndian == true) {        // Salary between than 30k to 50k and emp. is indian
+            } else if ((empSal > 30000 && empSal < 50000) && isIndian == true) {        // Salary between than 30k to 50k
                 return taxAmount = empSal * 5 / 100;
-            } else if ((empSal > 10000 && empSal < 30000) && isIndian == true) {        // Salary between than 10k to 30k and emp. is indian
+            } else if ((empSal > 10000 && empSal < 30000) && isIndian == true) {        // Salary between than 10k to 30k
                 return taxAmount = empSal * 4 / 100;
             } else {                                                            //if any exception is not met
                 throw new TaxNotEligibleException("The employee does not need to pay tax");                                //custom exception
