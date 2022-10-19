@@ -41,7 +41,7 @@ class TaxCalculator1{
                 return taxAmount = empSal * 5 / 100;
             } else if ((empSal > 10000 && empSal < 30000)) { // Salary between than 10k to 30k and emp. is indian
                 return taxAmount = empSal * 4 / 100;
-            } else {                                                            //if any exception is not met
+            } else {                                                          
                 throw new TaxNotEligibleException("The employee does not need to pay tax");                                //custom exception
             }
         } catch (Exception e) {    // hadeling custom exceptions
@@ -50,14 +50,15 @@ class TaxCalculator1{
        return taxAmount;
     }
     //creating custom exception classes
-    class CountryNotValidException extends Exception {
-    public CountryNotValidException(String string) {
-            super(string);
+    class CountryNotValidException extends Exception {   
+	           	super(string);                                            
+    public CountryNotValidException(String string) { //overloading constructor of this object
+		                                                   //passing and invoking parameterized constructor of Exception class
+                    super(string);
         }}
-    class EmployeeNameInValidException extends Exception {
-        public EmployeeNameInValidException(String string) {
-            super(string);
+      public EmployeeNameInValidException(String string) {  //overloading constructor of this object
+            super(string);                                 //passing and invoking parameterized constructor of Exception class
         }}
-    class TaxNotEligibleException extends Exception {
-        public TaxNotEligibleException(String string) {
+    class TaxNotEligibleException extends Exception {//overloading constructor of this object
+        public TaxNotEligibleException(String string) {     //passing and invoking parameterized constructor of Exception class
             super(string);}}}
