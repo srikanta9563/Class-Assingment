@@ -22,7 +22,7 @@ class TaxCalculator1{
                 throw new CountryNotValidException("The employee should be an Indian citizen for calculating tax");        //custom exception
             }
             if (empName == null) {                //if employee name is not passed
-                throw new EmployeeNameInValidException("The employee name cant be empty");                                //custom exception
+                throw new EmployeeNameInValidException("The employee name cant be empty");    //custom exception
             }
             if (empSal > 100000 && Indian == true) {                            // Salary greater than 10k
                 return taxAmount = empSal * 8 / 100;
@@ -32,8 +32,8 @@ class TaxCalculator1{
                 return taxAmount = empSal * 5 / 100;
             } else if ((empSal > 10000 && empSal < 30000)) {        // Salary between than 10k to 30k
                 return taxAmount = empSal * 4 / 100;
-            } else {                                                            //if any exception is not met
-                throw new TaxNotEligibleException("The employee does not need to pay tax");                                //custom exception
+            } else {                                                        
+                throw new TaxNotEligibleException("The employee does not need to pay tax");    //custom exception
             }
         } catch (Exception e) {    // hadeling custom exceptions
             System.out.println(e);
